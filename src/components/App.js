@@ -39,16 +39,28 @@ function App() {
   //funcion para pintar los clubes del data json en pantalla
 
   const renderClubs = () => {
-    return data.map((club, index) => {
-      return (
-        <li key={index}>
-          <p>#0 {club.name} </p>
-          <i className="far fa-times-circle"></i>
-          <p>abierto entre semana: {club.openOnWeekdays ? "sí" : "no"}</p>
-          <p>abierto el fin de semana: {club.openOnWeekend ? "sí" : "no"}</p>
-        </li>
-      );
-    });
+    return data
+      .filter(club => {
+        if (week === 'weekDays') {
+          return club.openOnWeekdays
+
+        } else if (week === 'weekEnds') {
+          return club.openOnWeekend
+        } else {
+          return club.openOnWeekend || club.openOnWeekdays || !club.openOnWeekend || !club.openOnWeekdays
+
+        }
+      })
+      .map((club, index) => {
+        return (
+          <li key={index}>
+            <p>#0 {club.name} </p>
+            <i className="far fa-times-circle"></i>
+            <p>abierto entre semana: {club.openOnWeekdays ? "sí" : "no"}</p>
+            <p>abierto el fin de semana: {club.openOnWeekend ? "sí" : "no"}</p>
+          </li>
+        );
+      });
   };
 
   // añadir un  nuevo club tengo que recoger 3 info =>> el nombre y checkboxes
