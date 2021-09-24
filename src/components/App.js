@@ -12,11 +12,11 @@ function App() {
   const [weekend, setWeekend] = useState(false);
 
   //esta funcion es para el select
-  const handleWeek = (ev) => {
+  const handleWeekFilter = (ev) => {
     console.log(ev.target.value);
     const valueSelect = ev.target.value;
     setWeek(valueSelect);
-    return data.filter((club) => club.openOnWeekdays === week);
+
   };
 
   //esta funcion es para el input de añadir el nuevo club
@@ -72,8 +72,8 @@ function App() {
         <h1>Mis clubs</h1>
         <label>
           Mostrar
-          <select name="option" id="option" onChange={handleWeek}>
-            <option value="todos">todos</option>
+          <select name="option" id="option" value={week} onChange={handleWeekFilter}>
+            <option value="all">todos</option>
             <option value="weekDays">los que abren entre semana</option>
             <option value="weekEnds">los que abren el fin de semana</option>
           </select>
