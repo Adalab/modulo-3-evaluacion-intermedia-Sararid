@@ -1,5 +1,19 @@
 //Puedes usar partials e imports de Sass, variables, anidaciones, mixins, funciones
-
-.title {
-  color: red;
+header {
+  border-bottom: solid 2px black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+li {
+  border: solid 2px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
 }
