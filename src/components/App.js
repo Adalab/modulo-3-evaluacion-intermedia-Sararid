@@ -62,7 +62,7 @@ function App() {
       })
       .map((club, index) => {
         return (
-          <li key={index}>
+          <li key={index} className="listClubs__items--club">
             <p>#{index} {club.name} </p>
             <button onClick={handleRemoveBtn}>  <i className="far fa-times-circle" ></i></button>
             <p>abierto entre semana: {club.openOnWeekdays ? "sí" : "no"}</p>
@@ -87,58 +87,68 @@ function App() {
     setWeekend(false);
   };
 
+  const handleOnSubmit = (ev) => {
+    ev.preventDefault();
+  }
   return (
     <div>
-      <header>
-        <h1>Mis clubs</h1>
-        <label>
-          Mostrar
-          <select name="option" id="option" value={week} onChange={handleWeekFilter}>
+      <header className="header">
+        <h1 className="header__title">Mis clubs</h1>
+        <form onSubmit={handleOnSubmit}>
+          <label className="header__input">
+            Mostrar </label>
+          <select name="option" id="option" value={week} onChange={handleWeekFilter} className="header__input--select">
             <option value="all">todos</option>
             <option value="weekDays">los que abren entre semana</option>
             <option value="weekEnds">los que abren el fin de semana</option>
           </select>
-        </label>
+
+        </form>
       </header>
-      <div>
-        <ul> {renderClubs()} </ul>
-      </div>
 
-      <h2>Añadir un nuevo club</h2>
+      <section className="listClubs">
+        <ul className="listClubs__items"> {renderClubs()} </ul>
+      </section>
 
-      <label>
-        Nombre del club
-        <input
-          type="text"
-          name="newClubName"
-          id="newClubName"
-          value={newClubName}
-          onChange={handleNewClubName}
-        />
-      </label>
+      <section className="addNewClub">
+        <h2>Añadir un nuevo club</h2>
+        <form className="addNewClub__form">
+          <label>
+            Nombre del club
+            <input
+              type="text"
+              name="newClubName"
+              id="newClubName"
+              value={newClubName}
+              onChange={handleNewClubName}
+            />
+          </label>
 
-      <label>
-        Abre entre semana?
-        <input
-          type="checkbox"
-          name="weekDay"
-          id="weekday"
-          checked={weekday}
-          onChange={handleWeekSelection}
-        />
-      </label>
-      <label>
-        Abre los fines de semana?
-        <input
-          type="checkbox"
-          name="weeKend"
-          id="weekend"
-          checked={weekend}
-          onChange={handleWeekSelection}
-        />
-      </label>
+          <label>
+            Abre entre semana?
+            <input
+              type="checkbox"
+              name="weekDay"
+              id="weekday"
+              checked={weekday}
+              onChange={handleWeekSelection}
+            />
+          </label>
+          <label>
+            Abre los fines de semana?
+            <input
+              type="checkbox"
+              name="weeKend"
+              id="weekend"
+              checked={weekend}
+              onChange={handleWeekSelection}
+            />
+          </label>
 
-      <input type="submit" value="Añadir un nuevo club" onClick={handleClick} />
+          <input type="submit" value="Añadir un nuevo club" onClick={handleClick} />
+        </form>
+      </section>
+
     </div>
   );
 }

@@ -1,19 +1,64 @@
 //Puedes usar partials e imports de Sass, variables, anidaciones, mixins, funciones
-header {
-  border-bottom: solid 2px black;
+.header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  align-content: center;
+  border-bottom: solid 2px black;
+  padding-bottom: 20px;
   justify-content: space-between;
+
+  &__title {
+    color: cadetblue;
+  }
+  &__input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
 }
-ul {
+
+.listClubs {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
-li {
-  border: solid 2px black;
-  display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  border-bottom: solid 2px black;
+  &__items {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &--club {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin: 20px 20px;
+      border: solid 2px black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.addNewClub {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   width: 50%;
+  align-items: center;
+  border: black 2px solid;
+  border-radius: 20%;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
 }
