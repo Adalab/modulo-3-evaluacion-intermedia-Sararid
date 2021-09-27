@@ -48,12 +48,10 @@
 .addNewClub {
   margin-top: 20px;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  width: 50%;
+  flex-wrap: wrap;
   align-items: center;
-  border: black 2px solid;
-  border-radius: 20%;
+  justify-content: space-around;
 
   &__form {
     display: flex;
