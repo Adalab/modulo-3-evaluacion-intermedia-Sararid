@@ -115,7 +115,7 @@ function App() {
         <form className="addNewClub__form">
           <label>
             Nombre del club
-            <input
+            <input className="addNewClub__form--input"
               type="text"
               name="newClubName"
               id="newClubName"
@@ -124,9 +124,9 @@ function App() {
             />
           </label>
 
-          <label>
+          <label className="addNewClub__formDetail">
             Abre entre semana?
-            <input
+            <input className="addNewClub__form--input"
               type="checkbox"
               name="weekDay"
               id="weekday"
@@ -136,7 +136,7 @@ function App() {
           </label>
           <label>
             Abre los fines de semana?
-            <input
+            <input className="addNewClub__form--input"
               type="checkbox"
               name="weeKend"
               id="weekend"

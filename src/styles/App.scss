@@ -1,3 +1,7 @@
+body {
+  margin: 0 15px 0;
+  height: 100vh;
+}
 //Puedes usar partials e imports de Sass, variables, anidaciones, mixins, funciones
 .header {
   display: flex;
@@ -58,5 +62,10 @@
     flex-direction: column;
     align-items: flex-start;
     flex-wrap: wrap;
+    &--input {
+      margin-left: 15px;
+    }
+  }
+  &__formDetail {
   }
 }
