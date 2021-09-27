@@ -54,7 +54,7 @@ function App() {
       .map((club, index) => {
         return (
           <li key={index}>
-            <p>#0 {club.name} </p>
+            <p>#{index} {club.name} </p>
             <i className="far fa-times-circle"></i>
             <p>abierto entre semana: {club.openOnWeekdays ? "sí" : "no"}</p>
             <p>abierto el fin de semana: {club.openOnWeekend ? "sí" : "no"}</p>
