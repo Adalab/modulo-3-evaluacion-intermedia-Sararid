@@ -35,15 +35,7 @@ function App() {
       setWeekend(ev.target.checked);
     }
   };
-  // funcion borrar cada club 
 
-
-  const handleRemoveBtn = (ev) => {
-    ev.preventDefault();
-    const parentLiId = ev.currentTarget.parentElement.id;
-    data.splice(parentLiId, 1);
-    setData([...data]);
-  };
 
   //funcion para pintar los clubes del data json en pantalla
 
@@ -62,9 +54,9 @@ function App() {
       })
       .map((club, index) => {
         return (
-          <li key={index} className="listClubs__items--club">
+          <li key={index} id={club.index} className="listClubs__items--club">
             <p>#{index} {club.name} </p>
-            <button onClick={handleRemoveBtn}>  <i className="far fa-times-circle" ></i></button>
+            <button onClick={handleRemoveBtn} >  <i className="far fa-times-circle" ></i></button>
             <p>abierto entre semana: {club.openOnWeekdays ? "sí" : "no"}</p>
             <p>abierto el fin de semana: {club.openOnWeekend ? "sí" : "no"}</p>
           </li>
@@ -89,7 +81,18 @@ function App() {
 
   const handleOnSubmit = (ev) => {
     ev.preventDefault();
-  }
+  };
+
+  // funcion borrar cada club 
+
+
+  const handleRemoveBtn = (ev) => {
+    ev.preventDefault();
+    const id = ev.currentTarget.id
+    data.splice(id, 1);
+    setData([...data]);
+  };
+
   return (
     <div>
       <header className="header">
