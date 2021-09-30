@@ -1,17 +1,28 @@
+@import "./variables.scss";
+
 body {
   margin: 0 15px 0;
   height: 100vh;
+  font-family: $main-font;
 }
-//Puedes usar partials e imports de Sass, variables, anidaciones, mixins, funciones
-.header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
-  border-bottom: solid 2px black;
-  padding-bottom: 20px;
-  justify-content: space-between;
 
+//parete
+.header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  border-bottom: solid 2px black;
+  justify-items: center;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    border-bottom: solid 2px black;
+    padding-bottom: 20px;
+    justify-content: space-between;
+  }
   &__title {
     color: cadetblue;
   }
@@ -44,7 +55,9 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      flex-wrap: wrap;
+      width: 170px;
+      height: 250px;
+      border-radius: 0px 68px 22px 89px;
     }
   }
 }
@@ -62,8 +75,24 @@ body {
     flex-direction: column;
     align-items: flex-start;
     flex-wrap: wrap;
+
+    border: 2px solid black;
+    padding: 15px 15px;
+
     &--input {
-      margin-left: 15px;
+      margin: 5px 0px;
+      width: 200px;
+    }
+
+    &--submit {
+      border: none;
+      width: 200px;
+      padding: 10px 0px;
+      margin-top: 5px;
+      font-family: inherit;
+      font-weight: bold;
+      font-size: 16px;
+      background-color: khaki;
     }
   }
   &__formDetail {
