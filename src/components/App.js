@@ -87,11 +87,11 @@ function App() {
         <h1 className="header__title">Mis clubs</h1>
         <form onSubmit={handleOnSubmit}>
           <label className="header__input">
-            Mostrar </label>
+            Mostrar: </label>
           <select name="option" id="option" value={week} onChange={handleWeekFilter} className="header__input--select">
-            <option value="all">todos</option>
-            <option value="weekDays">los que abren entre semana</option>
-            <option value="weekEnds">los que abren el fin de semana</option>
+            <option value="all">Todos</option>
+            <option value="weekDays">Abierto entre semana</option>
+            <option value="weekEnds">Abierto el fin de semana</option>
           </select>
 
         </form>
